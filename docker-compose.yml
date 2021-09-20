@@ -1,0 +1,12 @@
+version: '3'
+services:
+  web:
+    build: .
+    image: marreta:0.0.1
+    command: bash -c "node api/index.js"
+    restart: always
+    volumes:
+      - .:/myapp
+    ports:
+      - "3000:3000"
+    user: "${UID}:${GID}"
