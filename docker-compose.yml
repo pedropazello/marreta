@@ -3,7 +3,7 @@ services:
   web:
     build: .
     image: marreta:0.0.1
-    command: bash -c "node api/index.js"
+    command: bash -c "npm start"
     restart: always
     volumes:
       - .:/myapp
