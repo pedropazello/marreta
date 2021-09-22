@@ -1,10 +1,14 @@
+const cheerioLoadUrl = require('../../functions/cheerioLoadUrl')
 class FolhaDeSaoPauloParser {
   constructor({ url }) {
     this.url = url
   }
 
-  parseBody() {
-    return "Folha de São Paulo News"
+  async parseBody() {
+    const $ = await cheerioLoadUrl(this.url)
+    const newsBody = $(".c-news__body")
+
+    return newsBody.html()
   }
 }
 
