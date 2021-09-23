@@ -5,7 +5,7 @@ class FolhaDeSaoPauloParser {
   }
 
   async parseBody() {
-    const $ = await cheerioLoadUrl(this.url)
+    const $ = await cheerioLoadUrl(this.url.href)
     const newsBody = $(".c-news__body")
 
     return newsBody.html()

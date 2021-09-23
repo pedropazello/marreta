@@ -11,8 +11,8 @@ class NewsParser {
 
   #parser() {
     return {
-      folhaDeSaoPaulo: new FolhaDeSaoPauloParser({ url: this.url })
-    }["folhaDeSaoPaulo"]
+      "www1.folha.uol.com.br": new FolhaDeSaoPauloParser({ url: this.url })
+    }[this.url.host]
   }
 }
 
